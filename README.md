@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/course%20run-4%20of%204%20targets%2C%2052%20s%2C%200%20collisions-2ea44f" alt="Course run: 4 of 4 targets, 52 seconds, 0 collisions">
-  <img src="https://img.shields.io/badge/MCU-WeMos%20D1%20ESP8266-1f6feb" alt="WeMos D1 (ESP8266)">
-  <img src="https://img.shields.io/badge/firmware-Arduino%20C%2B%2B-00979D?logo=arduino&logoColor=white" alt="Arduino C++">
-  <img src="https://img.shields.io/badge/localization-ArUco%20%2B%20MQTT%20over%20Wi--Fi-660066?logo=mqtt&logoColor=white" alt="ArUco + MQTT over Wi-Fi">
-  <img src="https://img.shields.io/badge/CAD-SolidWorks%20%2B%203D%20printing-DA291C" alt="SolidWorks + 3D printing">
+  <img src="docs/badges/course-run.svg" alt="Course run: 4 of 4 targets, 52 seconds, 0 collisions">
+  <img src="docs/badges/mcu.svg" alt="WeMos D1 (ESP8266)">
+  <img src="docs/badges/firmware.svg" alt="Arduino C++">
+  <img src="docs/badges/localization.svg" alt="ArUco + MQTT over Wi-Fi">
+  <img src="docs/badges/cad.svg" alt="SolidWorks + 3D printing">
 </p>
 
 A tracked robot that drives itself to a sequence of targets inside an instrumented arena. An overhead camera tracks the ArUco markers on the robot and streams its position and heading over MQTT. On board, a WeMos D1 fuses that pose with three ultrasonic range sensors to steer toward each waypoint while keeping clear of walls and obstacles. The team designed and 3D-printed the chassis, built the circuit without a breadboard, and wrote all navigation, obstacle-avoidance, motor-control and display logic in Arduino C++.
@@ -110,8 +110,8 @@ The route is a list of waypoints: the four assigned targets plus intermediate po
 
 $$
 d=\sqrt{dx^2+dy^2}, \qquad
-\theta_{\text{desired}}=\mathrm{atan2}(dy,\,dx), \qquad
-e=\theta_{\text{desired}}-\theta_{\text{robot}} \quad\text{wrapped to } [-180^\circ,\,180^\circ]
+\theta_{\text{desired}}=\mathrm{atan2}(dy, dx), \qquad
+e=\theta_{\text{desired}}-\theta_{\text{robot}} \quad\text{wrapped to } [-180^\circ, 180^\circ]
 $$
 
 The wrap step matters: without it a robot pointing at 170° with a target at -170° would try to turn 340° the long way around instead of 20° the short way.
