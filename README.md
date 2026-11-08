@@ -39,7 +39,6 @@ A tracked robot that drives itself to a sequence of targets inside an instrument
 - [Build and run](#build-and-run)
 - [Tuning notes and lessons learned](#tuning-notes-and-lessons-learned)
 - [Future work](#future-work)
-- [Team](#team)
 - [Documents and acknowledgements](#documents-and-acknowledgements)
 
 ## Results
