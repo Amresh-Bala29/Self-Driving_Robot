@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/course%20run-4%2F4%20targets%20%7C%2052%20s%20%7C%200%20collisions-2ea44f" alt="Course run: 4 of 4 targets, 52 seconds, 0 collisions">
-  <img src="https://img.shields.io/badge/MCU-WeMos%20D1%20(ESP8266)-1f6feb" alt="WeMos D1 (ESP8266)">
+  <img src="https://img.shields.io/badge/course%20run-4%20of%204%20targets%2C%2052%20s%2C%200%20collisions-2ea44f" alt="Course run: 4 of 4 targets, 52 seconds, 0 collisions">
+  <img src="https://img.shields.io/badge/MCU-WeMos%20D1%20ESP8266-1f6feb" alt="WeMos D1 (ESP8266)">
   <img src="https://img.shields.io/badge/firmware-Arduino%20C%2B%2B-00979D?logo=arduino&logoColor=white" alt="Arduino C++">
   <img src="https://img.shields.io/badge/localization-ArUco%20%2B%20MQTT%20over%20Wi--Fi-660066?logo=mqtt&logoColor=white" alt="ArUco + MQTT over Wi-Fi">
   <img src="https://img.shields.io/badge/CAD-SolidWorks%20%2B%203D%20printing-DA291C" alt="SolidWorks + 3D printing">
@@ -19,13 +19,13 @@
 
 A tracked robot that drives itself to a sequence of targets inside an instrumented arena. An overhead camera tracks the ArUco markers on the robot and streams its position and heading over MQTT. On board, a WeMos D1 fuses that pose with three ultrasonic range sensors to steer toward each waypoint while keeping clear of walls and obstacles. The team designed and 3D-printed the chassis, built the circuit without a breadboard, and wrote all navigation, obstacle-avoidance, motor-control and display logic in Arduino C++.
 
-| | |
-|---|---|
-| **Task** | Reach four assigned targets in order inside the Stevens Smart Arena, pause for two seconds at each, never touch a wall or obstacle, and finish within three minutes. |
-| **Sensing** | Overhead camera + two 4 cm ArUco markers give global position and heading via MQTT. Three HC-SR04 ultrasonic sensors (front, left, right) give local obstacle distances. |
-| **Control** | A ~10 Hz loop computes the distance and heading error to the current waypoint, steers with differential track speeds, and overrides steering when something is in range. |
-| **Result** | Week 13 course run: all 4 targets in order, 52 seconds, 0 collisions. |
-| **My role** | Software lead: path-planning and obstacle-avoidance algorithms, firmware integration, on-robot debugging, and primary author of the final report. |
+<table>
+  <tr><td><b>Task</b></td><td>Reach four assigned targets in order inside the Stevens Smart Arena, pause for two seconds at each, never touch a wall or obstacle, and finish within three minutes.</td></tr>
+  <tr><td><b>Sensing</b></td><td>Overhead camera + two 4 cm ArUco markers give global position and heading via MQTT. Three HC-SR04 ultrasonic sensors (front, left, right) give local obstacle distances.</td></tr>
+  <tr><td><b>Control</b></td><td>A ~10 Hz loop computes the distance and heading error to the current waypoint, steers with differential track speeds, and overrides steering when something is in range.</td></tr>
+  <tr><td><b>Result</b></td><td>Week 13 course run: all 4 targets in order, 52 seconds, 0 collisions.</td></tr>
+  <tr><td><b>My role</b></td><td>Software lead: path-planning and obstacle-avoidance algorithms, firmware integration, on-robot debugging, and primary author of the final report.</td></tr>
+</table>
 
 ## Contents
 
@@ -110,7 +110,7 @@ The route is a list of waypoints: the four assigned targets plus intermediate po
 
 $$
 d=\sqrt{dx^2+dy^2}, \qquad
-\theta_{\text{desired}}=\operatorname{atan2}(dy,\,dx), \qquad
+\theta_{\text{desired}}=\mathrm{atan2}(dy,\,dx), \qquad
 e=\theta_{\text{desired}}-\theta_{\text{robot}} \quad\text{wrapped to } [-180^\circ,\,180^\circ]
 $$
 
