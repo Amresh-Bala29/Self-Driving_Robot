@@ -387,19 +387,8 @@ autonomous-navigation-robot/
 - **Obstacle memory.** Record where obstacles were detected in the arena frame and plan around them on later legs instead of reacting each time.
 - **Wiring and finish.** Shorter custom-length leads and a wire channel in the plate would tidy the harness and improve the look of the robot.
 
-## Team
-
-| | Major | Led |
-|---|---|---|
-| **Amresh Balakrishnan** | Computer Engineering | Software: path-planning and obstacle-avoidance algorithms, firmware integration, on-robot debugging; primary author of the final report |
-| **Ava Alteveer** | Mechanical Engineering | Mechanical design, SolidWorks modeling and renders, 3D printing, wiring and the electrical sections of the report |
-| **Abuzer Gerdek** | Computer Engineering | Final presentation and sections of the report |
-
-ENGR-122 Section A1, Group 2, Stevens Institute of Technology, Spring 2026.
 
 ## Documents and acknowledgements
 
 - [Final report (PDF)](docs/ENGR122_Final_Report.pdf): full design narrative, decision matrices, assembly instructions and the complete source listing.
 - [Final presentation (PPTX)](docs/ENGR122_Final_Presentation.pptx): the slide deck from the project showcase.
-
-The Wi-Fi / MQTT baseline (`MQTT.h` and the setup / loop scaffolding that keeps the camera data flowing) was provided by the Stevens SES IDEAs program for ENGR-122. Everything built on top of it, the navigation, obstacle avoidance, motor control, telemetry, mechanical and electrical design, is the team's work.
